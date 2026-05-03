@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+title: "BA2 Digital Korea — Final Paper Dataset Menu"
+message: "If you use a dataset from this repository, please cite both this menu and the upstream source corpus from scdenney/nlp_corpora."
+type: dataset
+authors:
+  - family-names: Denney
+    given-names: Steven
+    affiliation: "Korean Studies, Leiden University"
+    email: s.c.denney@hum.leidenuniv.nl
+date-released: 2026-05-04
+url: "https://github.com/scdenney/ba2-final-paper-data"
+repository-code: "https://github.com/scdenney/ba2-final-paper-data"
+license:
+  - CC-BY-4.0
+  - MIT
+keywords:
+  - Korean studies
+  - text-as-data
+  - computational text analysis
+  - teaching dataset
+  - FAIR principles
+references:
+  - type: software
+    title: "NLP Corpora for Korean Studies"
+    authors:
+      - family-names: Denney
+        given-names: Steven
+    url: "https://github.com/scdenney/nlp_corpora"
+    notes: "Upstream source corpora from which this menu was derived."
