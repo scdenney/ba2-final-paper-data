@@ -13,7 +13,7 @@ liberation-era Korean-language newspaper articles.
 
 ## `text`
 
-- **Type:** string (Korean, NFC-normalised)
+- **Type:** string (Korean, NFC-normalized)
 - **Description:** The cleaned article body. Truncated to the first
   2,000 characters; shorter articles are kept in full.
 - **Length stats:** mean ~820 characters, median ~720, max 2,000.
@@ -41,7 +41,7 @@ therefore filtered out by the `language == 'Modern Korean'` rule).
 - **Description:** Newspaper title. 14 values in the sample, but two
   dominate.
 
-| Korean value | Romanisation | Period | Region | Notes |
+| Korean value | Romanization | Period | Region | Notes |
 |---|---|---|---|---|
 | `남조선민보` | Namjoseon Minbo | mid-1940s | South (Busan/Masan area) | Largest single source — liberation-era regional daily |
 | `마산일보` | Masan Ilbo | late-1940s/1950s | South (Masan) | Second-largest source |

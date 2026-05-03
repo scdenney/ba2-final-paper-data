@@ -1,59 +1,28 @@
 # Rodong Sinmun (English Edition), 2018-2021
 
-**File:** `rodong_sinmun_en_sample.csv`
-**Rows:** 600 articles
-**Size:** ~0.91 MB
-**Source:** `nlp_corpora/data/rodong_sinmun/rodong_sinmun_en.csv`
-(9,797-article original, 2018-01-02 to 2022-06-03).
+**File:** `rodong_sinmun_en_sample.csv` — 600 articles, ~0.91 MB.
 
-*Rodong Sinmun* (로동신문, "Workers' Newspaper") is the official organ of
-the Workers' Party of Korea — the most authoritative public-facing voice
-of the North Korean state. The English edition is a curated subset
-prepared explicitly for international audiences: it tracks the regime's
-preferred framing of high-stakes diplomacy (the 2018-2019 US-DPRK
-process, the 2020 pandemic, the 2021 sanctions environment).
+*Rodong Sinmun* (로동신문, "Workers' Newspaper") is the official organ of the Workers' Party of Korea — the most authoritative public-facing voice of the North Korean state. The English edition is a curated subset prepared explicitly for international audiences: it tracks the regime's preferred framing of high-stakes diplomacy (the 2018-2019 US-DPRK process, the 2020 pandemic, the 2021 sanctions environment).
 
 The sample window 2018-01 through 2021-12 covers:
 
-- **2018**: Year of summit diplomacy — Singapore (June, Trump-Kim),
-  Panmunjom and Pyongyang (Moon-Kim), inter-Korean opening.
-- **2019**: Hanoi summit failure (February), end-of-year crisis, North
-  Korean rhetoric hardens.
-- **2020**: Border closure and pandemic isolationism, total breakdown
-  of inter-Korean and US-DPRK channels.
-- **2021**: Eighth Party Congress, "frontal breakthrough" line, missile
-  testing resumes.
+- **2018**: Year of summit diplomacy — Singapore (June, Trump-Kim), Panmunjom and Pyongyang (Moon-Kim), inter-Korean opening.
+- **2019**: Hanoi summit failure (February), end-of-year crisis, North Korean rhetoric hardens.
+- **2020**: Border closure and pandemic isolationism, total breakdown of inter-Korean and US-DPRK channels.
+- **2021**: Eighth Party Congress, "frontal breakthrough" line, missile testing resumes.
+
+The sample is stratified by year (proportional): roughly 178 / 167 / 144 / 111 articles for 2018 / 2019 / 2020 / 2021. Article bodies are truncated to 3,500 characters.
 
 ## CRITICAL CAVEAT — text is in ENGLISH, not Korean
 
-This is the only Week 12 corpus in **English**. It is included for
-students who prefer to work with non-Korean text (per the syllabus's
-accommodation clause). Implications:
+This is the only corpus in the menu in **English**. Implications:
 
-- **The KNU sentiment dictionary will not work** — it is a Korean-language
-  dictionary. To do sentiment analysis on this corpus, students should
-  use a different approach:
+- **The KNU sentiment dictionary will not work** — it is a Korean-language dictionary. To do sentiment analysis on this corpus, use a different approach:
   - VADER (rule-based English sentiment, freely available)
-  - A small custom dictionary built from regime-specific vocabulary
-    (e.g. tag the words "imperialist", "provocation", "criminal" as
-    negative; "victory", "achievement", "great" as positive)
-  - Or skip sentiment and choose a non-sentiment method (clustering,
-    embeddings, LDA — all work fine on English)
-- **KLUE BERT (Korean BERT) is also wrong for this corpus.** Students
-  who pick this dataset and want embeddings should use an English BERT
-  variant (e.g. `bert-base-uncased`) or the multilingual XLM-R.
-- Topic modelling (LDA), TF-IDF clustering, and English BERT embeddings
-  all work as normal.
-
-## Slim / truncate rationale
-
-- **Filter to 2018-2021**: drops the sparse 2022 partial year (only 918
-  articles, ending in early June 2022).
-- **Sample of 600**: stratified by year (proportional). Yields roughly
-  178 / 167 / 144 / 111 articles for 2018 / 2019 / 2020 / 2021.
-- **Truncate to 3,500 characters**: many Rodong articles are short news
-  blurbs (median ~1,100 chars in the sample); the cap mainly affects
-  long political reports. Keeps the file well under 1 MB.
+  - A small custom dictionary built from regime-specific vocabulary (e.g. tag the words "imperialist", "provocation", "criminal" as negative; "victory", "achievement", "great" as positive)
+  - Or skip sentiment and choose a non-sentiment method (clustering, embeddings, LDA — all work fine on English)
+- **KLUE BERT (Korean BERT) is also wrong for this corpus.** If you want embeddings, use an English BERT variant (e.g. `bert-base-uncased`) or the multilingual XLM-R.
+- Topic modeling (LDA), TF-IDF clustering, and English BERT embeddings all work as normal.
 
 ## Columns
 
@@ -68,38 +37,11 @@ accommodation clause). Implications:
 
 ## Suggested research questions
 
-1. **What topics dominate each year of the 2018-2021 window?** Fit an
-   8- to 10-topic LDA on all 600 articles, then chart topic prevalence
-   by `year`. Hypothesis: 2018 articles emphasise summit diplomacy;
-   2019-2020 articles introduce pandemic and isolation themes; 2021
-   articles return to militancy. (LDA + temporal grouping)
-2. **Did the regime's English-language rhetoric harden after the
-   February 2019 Hanoi summit failure?** Build a small custom sentiment
-   dictionary (regime-specific positive / negative words), then compare
-   pre-Hanoi (2018 + Jan-Feb 2019) vs. post-Hanoi (Mar 2019 onward) mean
-   sentiment. (custom-dictionary sentiment + temporal split)
-3. **Do articles cluster cleanly by year at the embedding level?**
-   Embed articles with English BERT (or multilingual XLM-R), run k-means
-   with k=4, then check whether `year` is concentrated in particular
-   clusters. If yes, the regime's rhetorical register changed visibly
-   year-on-year. (embeddings + clustering)
-4. **What is the dominant rhetorical 'frame' in articles about the US
-   and South Korea, and how does it differ?** Filter articles whose
-   `title` mentions "U.S." vs. those whose title mentions "south
-   Korea", then run topic modelling on each subset separately and
-   compare top-words. (LDA + filtered subsets)
+1. **What topics dominate each year of the 2018-2021 window?** Fit an 8- to 10-topic LDA on all 600 articles, then chart topic prevalence by `year`. Hypothesis: 2018 articles emphasize summit diplomacy; 2019-2020 articles introduce pandemic and isolation themes; 2021 articles return to militancy. (LDA + temporal grouping)
+2. **Did the regime's English-language rhetoric harden after the February 2019 Hanoi summit failure?** Build a small custom sentiment dictionary (regime-specific positive / negative words), then compare pre-Hanoi (2018 + Jan-Feb 2019) vs. post-Hanoi (Mar 2019 onward) mean sentiment. (custom-dictionary sentiment + temporal split)
+3. **Do articles cluster cleanly by year at the embedding level?** Embed articles with English BERT (or multilingual XLM-R), run k-means with k=4, then check whether `year` is concentrated in particular clusters. (embeddings + clustering)
+4. **What is the dominant rhetorical 'frame' in articles about the US and South Korea, and how does it differ?** Filter articles whose `title` mentions "U.S." vs. those whose title mentions "south Korea", then run topic modeling on each subset separately and compare top-words. (LDA + filtered subsets)
 
-## Reproducibility
+## Provenance
 
-Generated by `build.py` with `random_state=42`. Light cleaning only —
-NFC Unicode normalisation, whitespace collapse, removal of zero-width
-and BOM characters, removal of URLs and HTML entities, removal of
-literal `\n` / `\r` / `\t` artefacts. **No tokenisation** — Orange
-handles English tokenisation natively.
-
-To rebuild from the upstream source:
-
-```bash
-cd private/week12/datasets/rodong_sinmun_en
-python3 build.py
-```
+Drawn from the `rodong_sinmun` corpus in [scdenney/nlp_corpora](https://github.com/scdenney/nlp_corpora) (9,797-article original, 2018-01-02 to 2022-06-03).

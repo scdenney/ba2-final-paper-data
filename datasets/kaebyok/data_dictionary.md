@@ -12,7 +12,7 @@ A reference key for the 400-article sample of *Kaebyok* (개벽, 1920-1935).
 
 ## `text`
 
-- **Type:** string (Korean, often mixed with Hanja, NFC-normalised)
+- **Type:** string (Korean, often mixed with Hanja, NFC-normalized)
 - **Description:** The cleaned article body. Truncated to the first 3,500
   characters; shorter articles are kept in full.
 

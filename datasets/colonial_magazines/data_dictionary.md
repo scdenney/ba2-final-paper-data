@@ -12,7 +12,7 @@ A reference key for the 495-article sample of colonial-era Korean magazines.
 
 ## `text`
 
-- **Type:** string (Korean, frequently mixed with Hanja, NFC-normalised)
+- **Type:** string (Korean, frequently mixed with Hanja, NFC-normalized)
 - **Description:** The cleaned article body. Truncated to the first 3,500
   characters; shorter articles are kept in full.
 
@@ -23,7 +23,7 @@ A reference key for the 495-article sample of colonial-era Korean magazines.
 
 ### The "Big Four" (urban progressive monthlies, large article counts)
 
-| Korean value | Romanisation | Years | English gloss |
+| Korean value | Romanization | Years | English gloss |
 |---|---|---|---|
 | `삼천리` | Samcheolli | 1929-1942 | "Three-thousand Ri" (a poetic name for Korea) |
 | `별건곤` | Byeolgeongon | 1926-1934 | "Another World" — popular-culture / general-interest monthly |
@@ -32,7 +32,7 @@ A reference key for the 495-article sample of colonial-era Korean magazines.
 
 ### Late-Joseon and early colonial society magazines (smaller titles)
 
-| Korean value | Romanisation | English gloss |
+| Korean value | Romanization | English gloss |
 |---|---|---|
 | `대조선독립협회회보` | Daejoseon Dongnip Hyeophoe Hoebo | Independence Club bulletin (1896-1898) |
 | `대한자강회월보` | Daehan Jaganghoe Wolbo | Korea Self-Strengthening Society monthly |
@@ -60,7 +60,7 @@ A reference key for the 495-article sample of colonial-era Korean magazines.
 
 - **Type:** categorical (Korean originals)
 - **Description:** Genre label from the source. Many values, often
-  unstandardised across magazines. The most common include:
+  unstandardized across magazines. The most common include:
 
 | Korean value | English gloss |
 |---|---|

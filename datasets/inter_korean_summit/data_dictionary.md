@@ -13,7 +13,7 @@ of the inter-Korean leadership summits.
 
 ## `text`
 
-- **Type:** string (Korean, NFC-normalised)
+- **Type:** string (Korean, NFC-normalized)
 - **Description:** The cleaned article body. Truncated to the first 3,500
   characters; shorter articles are kept in full.
 
@@ -26,7 +26,7 @@ of the inter-Korean leadership summits.
 
 | Value | Korean original | Editorial line |
 |---|---|---|
-| `Chosun Ilbo` | 조선일보 | Conservative; sceptical of engagement with North Korea |
+| `Chosun Ilbo` | 조선일보 | Conservative; skeptical of engagement with North Korea |
 | `Hankyoreh` | 한겨레 | Progressive; broadly supportive of engagement |
 
 ## `year`

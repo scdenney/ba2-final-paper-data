@@ -10,15 +10,12 @@ authors:
 date-released: 2026-05-04
 url: "https://github.com/scdenney/ba2-final-paper-data"
 repository-code: "https://github.com/scdenney/ba2-final-paper-data"
-license:
-  - CC-BY-4.0
-  - MIT
+license: CC-BY-4.0
 keywords:
   - Korean studies
   - text-as-data
   - computational text analysis
   - teaching dataset
-  - FAIR principles
 references:
   - type: software
     title: "NLP Corpora for Korean Studies"

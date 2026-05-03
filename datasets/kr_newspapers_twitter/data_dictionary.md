@@ -13,7 +13,7 @@ Twitter feeds.
 
 ## `text`
 
-- **Type:** string (Korean, NFC-normalised)
+- **Type:** string (Korean, NFC-normalized)
 - **Description:** Tweet body. URLs and HTML entities stripped. Mostly
   short headline-style text.
 - **Length stats:** mean ~46 characters, median ~38, max ~116.
@@ -28,7 +28,7 @@ Twitter feeds.
 | `chosun` | 조선일보 (Chosun Ilbo) | Conservative — flagship right-leaning daily |
 | `dongamedia` | 동아일보 (Dong-a Ilbo) | Conservative |
 | `joongangilbo` | 중앙일보 (Joongang Ilbo) | Conservative — Samsung-affiliated |
-| `hankyungmedia` | 한국경제 (Hankyung Daily Economic) | Centre-right (business / market focus) |
+| `hankyungmedia` | 한국경제 (Hankyung Daily Economic) | Center-right (business / market focus) |
 | `hanitweet` | 한겨레 (Hankyoreh) | Progressive — flagship left-leaning daily |
 | `kyunghyang` | 경향신문 (Kyunghyang Shinmun) | Progressive |
 
@@ -41,7 +41,7 @@ Twitter feeds.
 ## `favoriteCount`
 
 - **Type:** integer
-- **Description:** Twitter likes (favourites) count at scrape time.
+- **Description:** Twitter likes (favorites) count at scrape time.
   Highly skewed — most tweets have 0–10, a few have hundreds. Use a
   log transform if you treat this as a continuous variable.
 

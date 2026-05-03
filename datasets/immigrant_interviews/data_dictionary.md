@@ -13,7 +13,7 @@ responses on immigrant admission to South Korea.
 
 ## `text`
 
-- **Type:** string (Korean, NFC-normalised)
+- **Type:** string (Korean, NFC-normalized)
 - **Description:** The cleaned open-text response.
 - **Length stats:** mean ~17 characters, median ~11, max 271.
 - **Note:** Most responses are 1-2 word phrases. See README for

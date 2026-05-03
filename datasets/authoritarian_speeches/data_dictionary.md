@@ -15,7 +15,7 @@ that is what you discover by reading the speeches.
 
 ## `text`
 
-- **Type:** string (Korean, NFC-normalised)
+- **Type:** string (Korean, NFC-normalized)
 - **Description:** The cleaned speech body. Truncated to the first 3,500
   characters; shorter speeches are kept in full.
 - **Example:** `존경하는 국민 여러분, 오늘 우리는 …`
@@ -23,7 +23,7 @@ that is what you discover by reading the speeches.
 ## `president`
 
 - **Type:** categorical
-- **Description:** Speaker (English Romanisation). Three values, 200 speeches each.
+- **Description:** Speaker (English Romanization). Three values, 200 speeches each.
 
 | Value | Korean original | Period in office |
 |---|---|---|

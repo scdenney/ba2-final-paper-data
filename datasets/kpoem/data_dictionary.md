@@ -13,7 +13,7 @@ emotion annotations.
 
 ## `text`
 
-- **Type:** string (Korean, NFC-normalised)
+- **Type:** string (Korean, NFC-normalized)
 - **Description:** The cleaned poem body. Original line breaks have been
   collapsed to spaces (so the text is a single line per row, suitable for
   Orange's File widget). No truncation.
@@ -31,7 +31,7 @@ emotion annotations.
 - **Description:** Poet name. The corpus includes many of the
   best-known modern Korean poets:
 
-| Korean | Romanisation / Notes |
+| Korean | Romanization / Notes |
 |---|---|
 | `윤동주` | Yun Dong-ju (1917-1945) — colonial-era resistance poet |
 | `김소월` | Kim So-wol (1902-1934) — early-modern lyric poet |
@@ -44,15 +44,16 @@ emotion annotations.
 ## `dominant_emotion`
 
 - **Type:** categorical (Korean)
-- **Description:** Most-voted emotion label across the 5 annotators
-  (see `build.py` for the aggregation logic). Top values:
+- **Description:** Most-voted emotion label across the 5 annotators (the
+  five annotator label-lists are pooled and the most frequent label wins;
+  ties go to the first label seen). Top values:
 
 | Korean value | English gloss | Sample n |
 |---|---|---:|
 | `슬픔` | Sadness | 122 |
 | `비장함` | Stoic resolve / pathos | 57 |
 | `불안/걱정` | Anxiety / worry | 56 |
-| `깨달음` | Epiphany / realisation | 50 |
+| `깨달음` | Epiphany / realization | 50 |
 | `안타까움/실망` | Pity / disappointment | 46 |
 | `아껴주는` | Tender / cherishing | 39 |
 | `기대감` | Anticipation / hope | 36 |

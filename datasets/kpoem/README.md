@@ -1,39 +1,10 @@
 # Modern Korean Poems with Emotion Annotations
 
-**File:** `kpoem_sample.csv`
-**Rows:** 615 poems
-**Size:** ~0.38 MB
-**Source:** `nlp_corpora/data/kpoem/kpoem_poems.tsv` (615-poem original
-— a TSV with five independent annotator emotion labels per poem).
+**File:** `kpoem_sample.csv` — 615 poems, ~0.38 MB.
 
-This is a small, hand-curated corpus of modern Korean poetry. Each poem
-has been annotated by **five independent emotion annotators**, each of
-whom listed multiple emotion labels per poem from a Korean emotion
-taxonomy (e.g. 슬픔 sadness, 비장함 stoic resolve, 깨달음 epiphany,
-서러움 grief, …). The corpus is a rare opportunity to compare a
-text-as-data sentiment / emotion analysis against human gold-label
-annotations on the same documents.
+This is a small, hand-curated corpus of modern Korean poetry. Each poem has been annotated by **five independent emotion annotators**, each of whom listed multiple emotion labels per poem from a Korean emotion taxonomy (e.g. 슬픔 sadness, 비장함 stoic resolve, 깨달음 epiphany, 서러움 grief, …). The corpus is a rare opportunity to compare a text-as-data sentiment / emotion analysis against human gold-label annotations on the same documents.
 
-## Slim / truncate rationale
-
-- **Keep all 615 poems** (no further sub-sampling). The source is
-  already small.
-- **No truncation needed**: poems are short by genre (median ~228
-  characters in the cleaned body, max 543).
-- **Format conversion**: source is TSV; output is CSV.
-
-## Aggregation of annotator labels
-
-Each of the five annotator columns in the source contains a
-comma-separated list of emotion labels. We **pool every label across
-all five annotators** for a given poem and pick the **most-voted label**
-as the `dominant_emotion`. We also expose the count
-(`emotion_votes` — how many annotator-mentions the dominant label
-received). For poems where two emotions tie, the first-seen one wins.
-
-This is a deliberately simple aggregation; students looking for a
-methodological extension could compute inter-annotator agreement, or
-expose the full set of unique labels per poem as a multi-label target.
+The five annotator label-lists per poem are pooled and the most-voted label is exposed as `dominant_emotion`; the count of mentions is exposed as `emotion_votes` (a confidence proxy).
 
 ## Columns
 
@@ -48,42 +19,11 @@ expose the full set of unique labels per poem as a multi-label target.
 
 ## Suggested research questions
 
-1. **Does the KNU sentiment dictionary's positive/negative score align
-   with the human-annotated `dominant_emotion`?** Apply KNU, then
-   compare its scores against `dominant_emotion` (you'll need to
-   collapse the 20+ emotions into a positive/negative grouping
-   yourself — e.g. 기대감 / 깨달음 = positive; 슬픔 / 불안/걱정 = negative).
-   This is the only Week 12 corpus where you can validate a sentiment
-   tool against human gold labels. (sentiment + validation)
-2. **Do poems by the same poet cluster together?** Embed poems with
-   KLUE BERT, run hierarchical clustering, then compare to the `poet`
-   labels. Some poets have distinctive recurrent motifs (윤동주's
-   self-doubt, 김소월's loss); does that show up at the embedding
-   level? (embeddings + clustering)
-3. **What latent topics cut across the 20 emotion categories?** Fit
-   a 6- to 8-topic LDA on all 615 poems, then chart topic prevalence
-   by `dominant_emotion` (filter to top 5-6 emotions for legibility).
-   Some topics may be tightly emotion-specific; others may cut across.
-   (LDA + grouping)
-4. **Are low-agreement poems (`emotion_votes` <= 2) systematically
-   different from high-agreement poems?** Use KLUE BERT embeddings
-   and check whether low-agreement poems cluster apart, or are simply
-   distributed evenly. Low agreement might indicate stylistic
-   ambiguity. (embeddings + agreement metric)
+1. **Does the KNU sentiment dictionary's positive/negative score align with the human-annotated `dominant_emotion`?** Apply KNU, then compare its scores against `dominant_emotion` (collapse the 20+ emotions into a positive/negative grouping yourself — see the data dictionary for a starter mapping). This is the only corpus in the menu where you can validate a sentiment tool against human gold labels. (sentiment + validation)
+2. **Do poems by the same poet cluster together?** Embed poems with KLUE BERT, run hierarchical clustering, then compare to the `poet` labels. Some poets have distinctive recurrent motifs (윤동주's self-doubt, 김소월's loss). (embeddings + clustering)
+3. **What latent topics cut across the 20 emotion categories?** Fit a 6- to 8-topic LDA on all 615 poems, then chart topic prevalence by `dominant_emotion` (filter to top 5-6 emotions for legibility). (LDA + grouping)
+4. **Are low-agreement poems (`emotion_votes` <= 2) systematically different from high-agreement poems?** Use KLUE BERT embeddings and check whether low-agreement poems cluster apart, or are distributed evenly. (embeddings + agreement metric)
 
-## Reproducibility
+## Provenance
 
-Generated by `build.py` with `random_state=42` (no sampling occurred —
-the seed is included for consistency with the rest of the menu). Light
-cleaning only — NFC Unicode normalisation, whitespace collapse, removal
-of zero-width and BOM characters, removal of URLs and HTML entities,
-removal of literal `\n` / `\r` / `\t` artefacts. **No Korean morphological
-tokenisation** — students will do that in Orange via the Python Script
-widget.
-
-To rebuild from the upstream source:
-
-```bash
-cd private/week12/datasets/kpoem
-python3 build.py
-```
+Drawn from the `kpoem` corpus in [scdenney/nlp_corpora](https://github.com/scdenney/nlp_corpora) (615-poem original).

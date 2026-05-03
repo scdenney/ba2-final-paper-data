@@ -1,35 +1,14 @@
 # Kaebyok (Gaebyeok / 開闢) Magazine, 1920-1935
 
-**File:** `kaebyok_sample.csv`
-**Rows:** 400 articles
-**Size:** ~2.52 MB
-**Source:** `nlp_corpora/data/kaebyok/kaebyok_corpus.csv`
-(2,467-article original).
+**File:** `kaebyok_sample.csv` — 400 articles, ~2.52 MB.
 
-*Kaebyok* (개벽, "Creation" / "Opening of the New World") was the flagship
-cultural-nationalist monthly of the colonial era — published by the
-Cheondogyo (Heavenly Way) religious movement from June 1920 onward. It was
-the most influential general-interest Korean-language magazine of its time:
-literary modernism, religious reform, women's rights, education, and (within
-censorship limits) anti-colonial politics all moved through its pages.
+*Kaebyok* (개벽, "Creation" / "Opening of the New World") was the flagship cultural-nationalist monthly of the colonial era — published by the Cheondogyo (Heavenly Way) religious movement from June 1920 onward. It was the most influential general-interest Korean-language magazine of its time: literary modernism, religious reform, women's rights, education, and (within censorship limits) anti-colonial politics all moved through its pages.
 
-The magazine was forcibly **suspended in August 1926** by the Japanese
-colonial Government-General. A successor magazine using the same name was
-revived briefly in 1934-1935 but is editorially distinct.
+The magazine was forcibly **suspended in August 1926** by the Japanese colonial Government-General. A successor magazine using the same name was revived briefly in 1934-1935 but is editorially distinct.
 
-The corpus has a **multi-year publication gap (1927-1933)** that is a
-direct artefact of colonial censorship — a rare case where a quantitative
-text feature (year-by-year article count) exposes a political event.
+The corpus has a **multi-year publication gap (1927-1933)** that is a direct artifact of colonial censorship — a rare case where a quantitative text feature (year-by-year article count) exposes a political event.
 
-## Slim / truncate rationale
-
-- **Sample of 400**: stratified across the **issue-date dimension**
-  (proportional to year), so the 1926 censorship gap is preserved in the
-  sample (38 articles from 1926, 17 from 1934, 18 from 1935).
-- **Truncate to 3,500 characters**: many *Kaebyok* articles are long
-  philosophical essays or serialised fiction (median ~3,500 characters
-  after truncation, with a noticeable upper-bound piling-up at the cap).
-  This is enough text for clustering, sentiment, and LDA.
+The sample is stratified across years (proportional), so the 1926 censorship gap is preserved (38 articles from 1926, 17 from 1934, 18 from 1935). Article bodies are truncated to 3,500 characters.
 
 ## Columns
 
@@ -43,40 +22,11 @@ text feature (year-by-year article count) exposes a political event.
 
 ## Suggested research questions
 
-1. **Did Kaebyok's editorial sentiment darken in the months leading to
-   the August 1926 suspension?** Apply the KNU sentiment dictionary,
-   then plot mean sentiment by `year`. Hypothesis: rising tension with
-   the Government-General might show up as more negative tone in late
-   articles. Caveat: KNU is a contemporary dictionary and may misread
-   colonial-era vocabulary — flag in your write-up. (sentiment +
-   temporal grouping)
-2. **Are 1934-1935 articles thematically distinct from the 1920-1926
-   articles?** Fit an 8-topic LDA on the full 400-article sample, then
-   chart topic prevalence by `year`. The successor *Kaebyok* of 1934
-   was launched in a much harsher political environment — does that
-   show up as a different topic mix? (LDA + grouping)
-3. **Do articles cluster by issue-year at all?** Embed articles with
-   KLUE BERT, run hierarchical clustering, then compare the dendrogram
-   to the `year` labels. If clusters track years, that's evidence of
-   year-on-year discourse drift. (embeddings + clustering)
-4. **What dominant topics characterise the magazine's first five years
-   (1920-1924, the editorially most radical period)?** Filter to those
-   years (~278 articles), fit a 6-topic LDA, then read off the top-words
-   per topic. Look for cultural-nationalism, religious-reform,
-   women's-rights, and literary-modernism strands. (LDA on a subset)
+1. **Did Kaebyok's editorial sentiment darken in the months leading to the August 1926 suspension?** Apply the KNU sentiment dictionary, then plot mean sentiment by `year`. Caveat: KNU is a contemporary dictionary and may misread colonial-era vocabulary — flag in your write-up. (sentiment + temporal grouping)
+2. **Are 1934-1935 articles thematically distinct from the 1920-1926 articles?** Fit an 8-topic LDA on the full 400-article sample, then chart topic prevalence by `year`. The successor *Kaebyok* of 1934 was launched in a much harsher political environment. (LDA + grouping)
+3. **Do articles cluster by issue-year at all?** Embed articles with KLUE BERT, run hierarchical clustering, then compare the dendrogram to the `year` labels. (embeddings + clustering)
+4. **What dominant topics characterize the magazine's first five years (1920-1924, the editorially most radical period)?** Filter to those years (~278 articles), fit a 6-topic LDA, then read off the top-words per topic. Look for cultural-nationalism, religious-reform, women's-rights, and literary-modernism strands. (LDA on a subset)
 
-## Reproducibility
+## Provenance
 
-Generated by `build.py` with `random_state=42`. Light cleaning only —
-NFC Unicode normalisation, whitespace collapse, removal of zero-width
-and BOM characters, removal of URLs and HTML entities, removal of
-literal `\n` / `\r` / `\t` artefacts. **No Korean morphological
-tokenisation** — students will do that in Orange via the Python Script
-widget.
-
-To rebuild from the upstream source:
-
-```bash
-cd private/week12/datasets/kaebyok
-python3 build.py
-```
+Drawn from the `kaebyok` corpus in [scdenney/nlp_corpora](https://github.com/scdenney/nlp_corpora) (2,467-article original).

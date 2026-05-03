@@ -1,44 +1,17 @@
 # Open-Text Survey Responses on Immigrant Admission (South Korea)
 
-**File:** `immigrant_interviews_sample.csv`
-**Rows:** 1,006 responses
-**Size:** ~0.11 MB
-**Source:** `nlp_corpora/data/immigrant_interviews/immigrant_interview.csv`
-(1,008-row original — 2 rows dropped during cleaning for empty text).
+**File:** `immigrant_interviews_sample.csv` — 1,006 responses, ~0.11 MB.
 
-This corpus is the **open-text portion** of a South Korean attitudinal
-survey on immigration: respondents were asked to articulate, in their own
-words, what kind of immigrant Korea should admit. The corpus is paired
-with rich respondent metadata (sex, age cohort, political identification,
-college attainment), making it ideal for **sentiment-by-subgroup**
-research designs.
+This corpus is the **open-text portion** of a South Korean attitudinal survey on immigration: respondents were asked to articulate, in their own words, what kind of immigrant Korea should admit. The corpus is paired with rich respondent metadata (sex, age cohort, political identification, college attainment), making it ideal for **sentiment-by-subgroup** research designs.
 
 ## CRITICAL CAVEAT — text is very short
 
-**Median text length is only ~11 characters.** These are 1-2 word
-phrases ("동포이니까" / "because they are co-ethnic", "유창한 한국어" /
-"fluent Korean"), not paragraphs. Implications:
+**Median text length is only ~11 characters.** These are 1-2 word phrases ("동포이니까" / "because they are co-ethnic", "유창한 한국어" / "fluent Korean"), not paragraphs.
 
-- **Suitable for**: sentiment scoring (the KNU dictionary still finds
-  hits in short Korean text), simple clustering on short responses,
-  comparisons of vocabulary frequency by subgroup.
-- **NOT suitable for**: LDA topic modelling. With ~11-character
-  documents, LDA cannot find meaningful word co-occurrence patterns
-  within a document. If you want to do topic modelling on this corpus,
-  you would need to **aggregate responses into 'piles' grouped by
-  subgroup** (e.g. all responses from `political_id3 == 'Conservative'`
-  concatenated into a single mega-document) — but that destroys the
-  document-level inference you would want.
+- **Suitable for**: sentiment scoring (the KNU dictionary still finds hits in short Korean text), simple clustering on short responses, comparisons of vocabulary frequency by subgroup.
+- **NOT suitable for**: LDA topic modeling at the response level. With ~11-character documents, LDA cannot find meaningful word co-occurrence patterns within a document. To do topic modeling on this corpus, aggregate responses into 'piles' grouped by subgroup first.
 
-This is an excellent corpus for a research question framed around
-**short-form sentiment** with a clean experimental-style design (4
-subgroup factors with which to slice the sentiment scores).
-
-## Slim / truncate rationale
-
-- **Keep all 1,006 rows**: source is already only ~90 KB.
-- **No truncation needed**: max text length is 271 characters; nothing
-  approaches the 3,500-character cap.
+This is an excellent corpus for a research question framed around **short-form sentiment** with a clean experimental-style design (4 subgroup factors with which to slice the sentiment scores).
 
 ## Columns
 
@@ -53,40 +26,11 @@ subgroup factors with which to slice the sentiment scores).
 
 ## Suggested research questions
 
-1. **Do conservative and progressive respondents articulate measurably
-   different sentiment when describing who Korea should admit?** Apply
-   the KNU sentiment dictionary, then use a Box Plot grouped by
-   `political_id3`. (sentiment + Box Plot grouping)
-2. **Do older respondents (60+) carry a more negative tone than younger
-   respondents (18-29)?** Filter to the two extreme age cohorts, apply
-   KNU, then compare via Box Plot. Hypothesis: generational gap in
-   immigration attitudes might surface as a sentiment gap. (sentiment
-   + age comparison)
-3. **Are there systematic vocabulary clusters by political identification
-   even at the embedding level?** Embed responses with KLUE BERT, run
-   k-means with k=3, then cross-tab cluster membership against
-   `political_id3`. KLUE BERT can produce embeddings even for very short
-   text, so this is methodologically defensible. (embeddings + clustering;
-   methodological reflection on embedding-quality at short lengths)
-4. **A methodological reflection question — what happens when you try
-   to fit LDA to this corpus?** Fit a 4-topic LDA, examine the top
-   words per topic, and discuss why the topics look noisy or empty.
-   This is a productive teaching moment about document-length
-   requirements. (LDA — failure-mode analysis)
+1. **Do conservative and progressive respondents articulate measurably different sentiment when describing who Korea should admit?** Apply the KNU sentiment dictionary, then use a Box Plot grouped by `political_id3`. (sentiment + Box Plot grouping)
+2. **Do older respondents (60+) carry a more negative tone than younger respondents (18-29)?** Filter to the two extreme age cohorts, apply KNU, then compare via Box Plot. (sentiment + age comparison)
+3. **Are there systematic vocabulary clusters by political identification even at the embedding level?** Embed responses with KLUE BERT, run k-means with k=3, then cross-tab cluster membership against `political_id3`. KLUE BERT can produce embeddings even for very short text. (embeddings + clustering; methodological reflection on embedding quality at short lengths)
+4. **A methodological reflection question — what happens when you try to fit LDA to this corpus?** Fit a 4-topic LDA, examine the top words per topic, and discuss why the topics look noisy or empty. (LDA — failure-mode analysis)
 
-## Reproducibility
+## Provenance
 
-Generated by `build.py` with `random_state=42` (no sampling occurred —
-the seed is included for consistency with the rest of the menu). Light
-cleaning only — NFC Unicode normalisation, whitespace collapse, removal
-of zero-width and BOM characters, removal of URLs and HTML entities,
-removal of literal `\n` / `\r` / `\t` artefacts. **No Korean morphological
-tokenisation** — students will do that in Orange via the Python Script
-widget.
-
-To rebuild from the upstream source:
-
-```bash
-cd private/week12/datasets/immigrant_interviews
-python3 build.py
-```
+Drawn from the `immigrant_interviews` corpus in [scdenney/nlp_corpora](https://github.com/scdenney/nlp_corpora).

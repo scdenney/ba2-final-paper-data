@@ -13,7 +13,7 @@ responses on North Korean migrants in South Korea.
 
 ## `text`
 
-- **Type:** string (Korean, NFC-normalised)
+- **Type:** string (Korean, NFC-normalized)
 - **Description:** The cleaned open-text response.
 - **Length stats:** mean ~13 characters, median ~9, max 156.
 - **Note:** Mostly 1-2 word phrases. See README for analytical implications.
@@ -26,7 +26,7 @@ responses on North Korean migrants in South Korea.
 | Value | n | Question framing |
 |---|---:|---|
 | `hire` | 2,008 | Would you hire a North Korean migrant? Why / why not? |
-| `neighbor` | 2,007 | Would you accept a North Korean migrant as a neighbour? |
+| `neighbor` | 2,007 | Would you accept a North Korean migrant as a neighbor? |
 | `vote` | 2,008 | Would you vote for a North Korean migrant for political office? |
 
 This is the natural Box Plot grouping variable for any response-frame
