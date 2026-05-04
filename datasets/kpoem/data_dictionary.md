@@ -1,7 +1,6 @@
 # `kpoem` Data Dictionary
 
-A reference key for the 615-poem sample of modern Korean poetry with
-emotion annotations.
+A reference key for the 615-poem sample of modern Korean poetry.
 
 ---
 
@@ -40,44 +39,3 @@ emotion annotations.
 | `정지용` | Chong Chi-yong (1902-1950) — modernist poet |
 
 (Not exhaustive — the poet column has ~30 unique values.)
-
-## `dominant_emotion`
-
-- **Type:** categorical (Korean)
-- **Description:** Most-voted emotion label across the 5 annotators (the
-  five annotator label-lists are pooled and the most frequent label wins;
-  ties go to the first label seen). Top values:
-
-| Korean value | English gloss | Sample n |
-|---|---|---:|
-| `슬픔` | Sadness | 122 |
-| `비장함` | Stoic resolve / pathos | 57 |
-| `불안/걱정` | Anxiety / worry | 56 |
-| `깨달음` | Epiphany / realization | 50 |
-| `안타까움/실망` | Pity / disappointment | 46 |
-| `아껴주는` | Tender / cherishing | 39 |
-| `기대감` | Anticipation / hope | 36 |
-| `서러움` | Grief / sorrow | 35 |
-| `불쌍함/연민` | Compassion / pity | 26 |
-| `힘듦/지침` | Exhaustion | 20 |
-| `신기함/관심` | Curiosity / interest | 20 |
-| `흐뭇함(귀여움/예쁨)` | Warmth / fondness | 18 |
-| `감동/감탄` | Awe / admiration | 14 |
-| `절망` | Despair | 13 |
-| `패배/자기혐오` | Defeat / self-loathing | 13 |
-
-20 categories total in the sample. For Box Plot grouping, filter to the
-top 5–6 emotions to keep panels legible.
-
-For a positive/negative collapse for sentiment validation:
-
-- **Negative**: 슬픔, 불안/걱정, 안타까움/실망, 서러움, 불쌍함/연민,
-  힘듦/지침, 절망, 패배/자기혐오, 비장함 (debatable — pathos)
-- **Positive**: 깨달음, 아껴주는, 기대감, 신기함/관심, 흐뭇함(귀여움/예쁨), 감동/감탄
-
-## `emotion_votes`
-
-- **Type:** integer (typically 1–5)
-- **Description:** Number of annotator-mentions the dominant emotion
-  received. Higher = stronger inter-annotator agreement on that label.
-  Use as a quality / confidence filter.

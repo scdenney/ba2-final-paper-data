@@ -13,7 +13,7 @@ Curated 11-corpus menu for the BA2 Digital Korea final research paper. Pick one 
 | 3 | [Colonial magazines (multi-title)](datasets/colonial_magazines/) | 495 | Colonial-period intellectual debates across 19 magazines; LDA across magazine type |
 | 4 | [*Kaebyok* (single-title)](datasets/kaebyok/) | 400 | Single-magazine diachronic analysis 1920–1935; the 1926 censorship gap |
 | 5 | [Korean newspapers (Twitter)](datasets/kr_newspapers_twitter/) | 2,745 | Comparative outlet ideology x engagement, 6 outlets in 2017 |
-| 6 | [KPoEM (Korean poems)](datasets/kpoem/) | 615 | Sentiment / emotion analysis on a labeled corpus (44-category KOTE labels) |
+| 6 | [Modern Korean poems](datasets/kpoem/) | 615 | Modern Korean poetry by ~30 poets — clustering by poet, topic modeling, sentiment dictionary |
 | 7 | [Immigrant interviews (open-text)](datasets/immigrant_interviews/) | 1,006 | Short-form sentiment / clustering with subgroup metadata (sex, age, political ID, college) |
 | 8 | [NK migrants interviews (open-text)](datasets/nkmigrants_interviews/) | 6,023 | Short-form sentiment / clustering by frame (hire / neighbor / vote) and demographics |
 | 9 | [Korean newspaper archive (modern slice)](datasets/korean_newspaper_archive_modern/) | 2,000 | Diachronic / cross-newspaper analysis of the late-colonial / liberation-era press |
@@ -26,7 +26,7 @@ Each dataset folder contains a `README.md` (corpus background, columns, suggeste
 
 ## Caveats — read before picking
 
-Some corpora have method-compatibility constraints. Pick deliberately, not by accident.
+Some corpora have method-compatibility constraints. Pick deliberately, not by accident. Per-corpus preprocessing detail is in [`PREPROCESSING_NOTES.md`](PREPROCESSING_NOTES.md) — read it once you have picked your corpus.
 
 - **#10 *Rodong Sinmun* is English-only.** The KNU sentiment dictionary and KLUE BERT (the Korean embedding model) will not apply. If you choose this corpus, use a different sentiment approach (e.g. VADER, a custom English lexicon) or a non-sentiment method (LDA or k-means clustering both work on English).
 - **#3 Colonial magazines and #4 *Kaebyok* are Hanmun-mixed.** Use the **Hanja-aware preprocessing script** on the [Data & Scripts](https://scdenney.github.io/ba2-digital-korea/data/) page (`hanja_preprocessing_mac-users.py` / `hanja_preprocessing_windows-users.py`). It converts Chinese characters to their Hangul readings before Kiwi tokenization, so the morphological analyzer handles the text cleanly. Note in your data and methods section that the KNU sentiment dictionary is contemporary, so historical valence may not match perfectly.
