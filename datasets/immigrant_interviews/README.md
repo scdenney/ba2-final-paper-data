@@ -4,12 +4,9 @@
 
 This corpus is the **open-text portion** of a South Korean attitudinal survey on immigration: respondents were asked to articulate, in their own words, what kind of immigrant Korea should admit. The corpus is paired with rich respondent metadata (sex, age cohort, political identification, college attainment), making it ideal for **sentiment-by-subgroup** research designs.
 
-## CRITICAL CAVEAT — text is very short
+## Note — text is very short
 
-**Median text length is only ~11 characters.** These are 1-2 word phrases ("동포이니까" / "because they are co-ethnic", "유창한 한국어" / "fluent Korean"), not paragraphs.
-
-- **Suitable for**: sentiment scoring (the KNU dictionary still finds hits in short Korean text), simple clustering on short responses, comparisons of vocabulary frequency by subgroup.
-- **NOT suitable for**: LDA topic modeling at the response level. With ~11-character documents, LDA cannot find meaningful word co-occurrence patterns within a document. To do topic modeling on this corpus, aggregate responses into 'piles' grouped by subgroup first.
+**Median text length is only ~11 characters.** These are 1-2 word phrases ("동포이니까" / "because they are co-ethnic", "유창한 한국어" / "fluent Korean"), not paragraphs. The KNU sentiment dictionary still finds hits in short Korean text, and KLUE BERT can produce embeddings for short responses; design your research question with the response length in mind.
 
 This is an excellent corpus for a research question framed around **short-form sentiment** with a clean experimental-style design (4 subgroup factors with which to slice the sentiment scores).
 
@@ -26,10 +23,10 @@ This is an excellent corpus for a research question framed around **short-form s
 
 ## Suggested research questions
 
-1. **Do conservative and progressive respondents articulate measurably different sentiment when describing who Korea should admit?** Apply the KNU sentiment dictionary, then use a Box Plot grouped by `political_id3`. (sentiment + Box Plot grouping)
-2. **Do older respondents (60+) carry a more negative tone than younger respondents (18-29)?** Filter to the two extreme age cohorts, apply KNU, then compare via Box Plot. (sentiment + age comparison)
-3. **Are there systematic vocabulary clusters by political identification even at the embedding level?** Embed responses with KLUE BERT, run k-means with k=3, then cross-tab cluster membership against `political_id3`. KLUE BERT can produce embeddings even for very short text. (embeddings + clustering; methodological reflection on embedding quality at short lengths)
-4. **A methodological reflection question — what happens when you try to fit LDA to this corpus?** Fit a 4-topic LDA, examine the top words per topic, and discuss why the topics look noisy or empty. (LDA — failure-mode analysis)
+1. **Do conservative and progressive respondents articulate measurably different sentiment when describing who Korea should admit?** Apply the KNU sentiment dictionary, then use a Box Plot grouped by `political_id3`.
+2. **Do older respondents (60+) carry a more negative tone than younger respondents (18-29)?** Filter to the two extreme age cohorts, apply KNU, then compare via Box Plot.
+3. **Are there systematic vocabulary clusters by political identification even at the embedding level?** Embed responses with KLUE BERT, run k-means with k=3, then cross-tab cluster membership against `political_id3`. KLUE BERT can produce embeddings even for very short text.
+4. **A methodological reflection question — what happens when you try to fit LDA to this corpus?** Fit a 4-topic LDA, examine the top words per topic, and discuss why the topics look noisy or empty.
 
 ## Provenance
 

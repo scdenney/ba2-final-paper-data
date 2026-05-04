@@ -19,10 +19,10 @@ This sample is filtered to articles from 1920 onward, written in Modern Korean, 
 
 ## Suggested research questions
 
-1. **Do articles from the late colonial period (1940-1945) and the liberation period (1945-1952) differ in topic mix?** Bin articles into the two periods (or four — 1920s, 1930s, 1940s, 1950s), fit an 8-topic LDA on the full sample, then chart topic prevalence by period. Look for the appearance of liberation-era political topics (elections, US Military Government, Korean War). (LDA + temporal grouping)
-2. **Is sentiment more negative in articles from the war years (1944-1953)?** Apply the KNU sentiment dictionary, then plot mean sentiment by year. Caveat: KNU is a contemporary dictionary; archaic 1940s vocabulary may be under-detected. (sentiment + temporal trend)
-3. **Do the two big regional papers (남조선민보 and 마산일보) cluster separately from the central / wartime papers (매일신보, 조선신문)?** Filter to the four most common newspapers, embed with KLUE BERT, run k-means with k=4, then check whether `newspaper` is concentrated in particular clusters. (embeddings + clustering)
-4. **A methodological reflection question — how does KLUE BERT handle archaic / mixed-script pre-1953 Korean?** Embed all 2,000 articles and visualize with t-SNE or UMAP colored by year. (embeddings — model-evaluation reflection)
+1. **Do articles from the late colonial period (1940-1945) and the liberation period (1945-1952) differ in topic mix?** Bin articles into the two periods (or four — 1920s, 1930s, 1940s, 1950s), fit an 8-topic LDA on the full sample, then chart topic prevalence by period. Look for the appearance of liberation-era political topics (elections, US Military Government, Korean War).
+2. **Is sentiment more negative in articles from the war years (1944-1953)?** Apply the KNU sentiment dictionary, then plot mean sentiment by year. Caveat: KNU is a contemporary dictionary; archaic 1940s vocabulary may be under-detected.
+3. **Do the two big regional papers (남조선민보 and 마산일보) cluster separately from the central / wartime papers (매일신보, 조선신문)?** Filter to the four most common newspapers, embed with KLUE BERT, run k-means with k=4, then check whether `newspaper` is concentrated in particular clusters.
+4. **A methodological reflection question — how does KLUE BERT handle archaic / mixed-script pre-1953 Korean?** Embed all 2,000 articles and visualize with t-SNE or UMAP colored by year.
 
 ## Provenance
 

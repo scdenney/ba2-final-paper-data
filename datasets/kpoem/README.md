@@ -19,10 +19,10 @@ The five annotator label-lists per poem are pooled and the most-voted label is e
 
 ## Suggested research questions
 
-1. **Does the KNU sentiment dictionary's positive/negative score align with the human-annotated `dominant_emotion`?** Apply KNU, then compare its scores against `dominant_emotion` (collapse the 20+ emotions into a positive/negative grouping yourself — see the data dictionary for a starter mapping). This is the only corpus in the menu where you can validate a sentiment tool against human gold labels. (sentiment + validation)
-2. **Do poems by the same poet cluster together?** Embed poems with KLUE BERT, run hierarchical clustering, then compare to the `poet` labels. Some poets have distinctive recurrent motifs (윤동주's self-doubt, 김소월's loss). (embeddings + clustering)
-3. **What latent topics cut across the 20 emotion categories?** Fit a 6- to 8-topic LDA on all 615 poems, then chart topic prevalence by `dominant_emotion` (filter to top 5-6 emotions for legibility). (LDA + grouping)
-4. **Are low-agreement poems (`emotion_votes` <= 2) systematically different from high-agreement poems?** Use KLUE BERT embeddings and check whether low-agreement poems cluster apart, or are distributed evenly. (embeddings + agreement metric)
+1. **Does the KNU sentiment dictionary's positive/negative score align with the human-annotated `dominant_emotion`?** Apply KNU, then compare its scores against `dominant_emotion` (collapse the 20+ emotions into a positive/negative grouping yourself — see the data dictionary for a starter mapping). This is the only corpus in the menu where you can validate a sentiment tool against human gold labels.
+2. **Do poems by the same poet cluster together?** Embed poems with KLUE BERT, run hierarchical clustering, then compare to the `poet` labels. Some poets have distinctive recurrent motifs (윤동주's self-doubt, 김소월's loss).
+3. **What latent topics cut across the 20 emotion categories?** Fit a 6- to 8-topic LDA on all 615 poems, then chart topic prevalence by `dominant_emotion` (filter to top 5-6 emotions for legibility).
+4. **Are low-agreement poems (`emotion_votes` <= 2) systematically different from high-agreement poems?** Use KLUE BERT embeddings and check whether low-agreement poems cluster apart, or are distributed evenly.
 
 ## Provenance
 

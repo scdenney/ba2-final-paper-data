@@ -20,10 +20,10 @@ The corpus is small but **balanced for partisan comparison**: 1,496 tweets from 
 
 ## Suggested research questions
 
-1. **Do left-leaning and right-leaning Korean newspapers tweet about measurably different topics?** Fit a 6- to 8-topic LDA on all 2,745 tweets, then chart topic prevalence by `pol_id`. Hypothesis: the left papers will weight social-issue and labor topics; the right papers will weight national-security and market topics. (LDA + Box Plot grouping)
-2. **Is sentiment systematically more negative in tweets from right-leaning papers (during the Moon administration)?** Apply the KNU sentiment dictionary, then use a Box Plot grouped by `pol_id`. The Moon government was progressive; right-leaning outlets were in regular opposition mode. (sentiment + grouping)
-3. **What predicts a viral tweet — sentiment, topic, or paper?** Bin `favoriteCount` into high/low (e.g. top quartile vs. rest). Do high-engagement tweets cluster on particular topics or sentiment ranges? Use embeddings or LDA to characterize the high-engagement group. (LDA / sentiment + engagement metric)
-4. **Caveat method-question: is 38-character text long enough for KLUE BERT embeddings to give meaningful clusters?** Run k-means on KLUE BERT embeddings of the full corpus and compare to a TF-IDF + k-means baseline. (embeddings — methodological reflection)
+1. **Do left-leaning and right-leaning Korean newspapers tweet about measurably different topics?** Fit a 6- to 8-topic LDA on all 2,745 tweets, then chart topic prevalence by `pol_id`. Hypothesis: the left papers will weight social-issue and labor topics; the right papers will weight national-security and market topics.
+2. **Is sentiment systematically more negative in tweets from right-leaning papers (during the Moon administration)?** Apply the KNU sentiment dictionary, then use a Box Plot grouped by `pol_id`. The Moon government was progressive; right-leaning outlets were in regular opposition mode.
+3. **What predicts a viral tweet — sentiment, topic, or paper?** Bin `favoriteCount` into high/low (e.g. top quartile vs. rest). Do high-engagement tweets cluster on particular topics or sentiment ranges? Use embeddings or LDA to characterize the high-engagement group.
+4. **Caveat method-question: is 38-character text long enough for KLUE BERT embeddings to give meaningful clusters?** Run k-means on KLUE BERT embeddings of the full corpus and compare to a TF-IDF + k-means baseline.
 
 ## Provenance
 

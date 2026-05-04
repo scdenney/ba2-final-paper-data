@@ -24,10 +24,10 @@ The sample is stratified at **200 speeches per president**, so any Box Plot grou
 
 ## Suggested research questions
 
-1. **Did regime sentiment soften across the three authoritarian presidents?** Apply the KNU sentiment dictionary, then use a Box Plot grouped by `president`. The democratic transition arc would predict Roh > Chun > Park in positive sentiment — but the official rhetoric may not match that pattern. (sentiment + Box Plot grouping)
-2. **Do the three presidents have distinguishable rhetorical fingerprints?** Embed speeches with KLUE BERT, run k-means with k=3, then check whether the clusters align with the `president` labels. (embeddings + clustering)
-3. **What topics distinguish New Year addresses from commemorative speeches?** Filter to two `kind` values and fit a 6-topic LDA on the combined subset, then chart topic prevalence by `kind`. (LDA + grouping)
-4. **Did 'security' / 'unification' rhetoric grow or shrink under the democratization pressure of 1987-1992?** Fit an 8-topic LDA on the full 600 speeches, then plot topic prevalence by `year`. Look for shifts in the late-Chun and Roh years. (LDA + temporal trend)
+1. **Did regime sentiment soften across the three authoritarian presidents?** Apply the KNU sentiment dictionary, then use a Box Plot grouped by `president`. The democratic transition arc would predict Roh > Chun > Park in positive sentiment — but the official rhetoric may not match that pattern.
+2. **Do the three presidents have distinguishable rhetorical fingerprints?** Embed speeches with KLUE BERT, run k-means with k=3, then check whether the clusters align with the `president` labels.
+3. **What topics distinguish New Year addresses from commemorative speeches?** Filter to two `kind` values and fit a 6-topic LDA on the combined subset, then chart topic prevalence by `kind`.
+4. **Did 'security' / 'unification' rhetoric grow or shrink under the democratization pressure of 1987-1992?** Fit an 8-topic LDA on the full 600 speeches, then plot topic prevalence by `year`. Look for shifts in the late-Chun and Roh years.
 
 ## Provenance
 

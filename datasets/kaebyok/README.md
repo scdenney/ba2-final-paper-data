@@ -22,10 +22,10 @@ The sample is stratified across years (proportional), so the 1926 censorship gap
 
 ## Suggested research questions
 
-1. **Did Kaebyok's editorial sentiment darken in the months leading to the August 1926 suspension?** Apply the KNU sentiment dictionary, then plot mean sentiment by `year`. Caveat: KNU is a contemporary dictionary and may misread colonial-era vocabulary — flag in your write-up. (sentiment + temporal grouping)
-2. **Are 1934-1935 articles thematically distinct from the 1920-1926 articles?** Fit an 8-topic LDA on the full 400-article sample, then chart topic prevalence by `year`. The successor *Kaebyok* of 1934 was launched in a much harsher political environment. (LDA + grouping)
-3. **Do articles cluster by issue-year at all?** Embed articles with KLUE BERT, run hierarchical clustering, then compare the dendrogram to the `year` labels. (embeddings + clustering)
-4. **What dominant topics characterize the magazine's first five years (1920-1924, the editorially most radical period)?** Filter to those years (~278 articles), fit a 6-topic LDA, then read off the top-words per topic. Look for cultural-nationalism, religious-reform, women's-rights, and literary-modernism strands. (LDA on a subset)
+1. **Did Kaebyok's editorial sentiment darken in the months leading to the August 1926 suspension?** Apply the KNU sentiment dictionary, then plot mean sentiment by `year`. Caveat: KNU is a contemporary dictionary and may misread colonial-era vocabulary — flag in your write-up.
+2. **Are 1934-1935 articles thematically distinct from the 1920-1926 articles?** Fit an 8-topic LDA on the full 400-article sample, then chart topic prevalence by `year`. The successor *Kaebyok* of 1934 was launched in a much harsher political environment.
+3. **Do articles cluster by issue-year at all?** Embed articles with KLUE BERT, run hierarchical clustering, then compare the dendrogram to the `year` labels.
+4. **What dominant topics characterize the magazine's first five years (1920-1924, the editorially most radical period)?** Filter to those years (~278 articles), fit a 6-topic LDA, then read off the top-words per topic. Look for cultural-nationalism, religious-reform, women's-rights, and literary-modernism strands.
 
 ## Provenance
 

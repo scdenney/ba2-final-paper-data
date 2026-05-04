@@ -22,10 +22,10 @@ The sample is stratified across **19 magazine titles** with a baseline of ~18 ar
 
 ## Suggested research questions
 
-1. **Do the 'Big Four' progressive magazines (Kaebyok, Samcheolli, Byeolgeongon, Donggwang) cluster separately from the smaller academic-society magazines?** Filter to a manageable subset, embed with KLUE BERT, run hierarchical clustering, then compare the dendrogram to the `magazine` labels. The Big Four were urban, middle-brow, and politically active; the smaller society magazines are scholarly and reform-oriented. (embeddings + clustering)
-2. **How do topics differ between the early colonial period (1896-1919) and the cultural-rule / 'cultural-nationalism' period (1920-1932)?** Bin articles by decade, fit a 10-topic LDA on the full sample, then chart topic prevalence by decade. Look for the appearance of modernist literary topics and women's-rights discourse in the 1920s. (LDA + temporal grouping)
-3. **Is sentiment systematically more positive in literary articles (시, 소설) than in editorials (논설)?** Apply the KNU sentiment dictionary, then use a Box Plot grouped by `article_type` (filter to the 3-4 most common types). (sentiment + Box Plot grouping)
-4. **Did Samcheolli's tone shift after 1937 (start of the Sino-Japanese War, intensification of Japanese mobilization)?** Filter to magazine == "삼천리", then plot KNU sentiment across years. (sentiment + temporal)
+1. **Do the 'Big Four' progressive magazines (Kaebyok, Samcheolli, Byeolgeongon, Donggwang) cluster separately from the smaller academic-society magazines?** Filter to a manageable subset, embed with KLUE BERT, run hierarchical clustering, then compare the dendrogram to the `magazine` labels. The Big Four were urban, middle-brow, and politically active; the smaller society magazines are scholarly and reform-oriented.
+2. **How do topics differ between the early colonial period (1896-1919) and the cultural-rule / 'cultural-nationalism' period (1920-1932)?** Bin articles by decade, fit a 10-topic LDA on the full sample, then chart topic prevalence by decade. Look for the appearance of modernist literary topics and women's-rights discourse in the 1920s.
+3. **Is sentiment systematically more positive in literary articles (시, 소설) than in editorials (논설)?** Apply the KNU sentiment dictionary, then use a Box Plot grouped by `article_type` (filter to the 3-4 most common types).
+4. **Did Samcheolli's tone shift after 1937 (start of the Sino-Japanese War, intensification of Japanese mobilization)?** Filter to magazine == "삼천리", then plot KNU sentiment across years.
 
 ## Provenance
 

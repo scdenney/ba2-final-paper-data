@@ -37,10 +37,10 @@ This is the only corpus in the menu in **English**. Implications:
 
 ## Suggested research questions
 
-1. **What topics dominate each year of the 2018-2021 window?** Fit an 8- to 10-topic LDA on all 600 articles, then chart topic prevalence by `year`. Hypothesis: 2018 articles emphasize summit diplomacy; 2019-2020 articles introduce pandemic and isolation themes; 2021 articles return to militancy. (LDA + temporal grouping)
-2. **Did the regime's English-language rhetoric harden after the February 2019 Hanoi summit failure?** Build a small custom sentiment dictionary (regime-specific positive / negative words), then compare pre-Hanoi (2018 + Jan-Feb 2019) vs. post-Hanoi (Mar 2019 onward) mean sentiment. (custom-dictionary sentiment + temporal split)
-3. **Do articles cluster cleanly by year at the embedding level?** Embed articles with English BERT (or multilingual XLM-R), run k-means with k=4, then check whether `year` is concentrated in particular clusters. (embeddings + clustering)
-4. **What is the dominant rhetorical 'frame' in articles about the US and South Korea, and how does it differ?** Filter articles whose `title` mentions "U.S." vs. those whose title mentions "south Korea", then run topic modeling on each subset separately and compare top-words. (LDA + filtered subsets)
+1. **What topics dominate each year of the 2018-2021 window?** Fit an 8- to 10-topic LDA on all 600 articles, then chart topic prevalence by `year`. Hypothesis: 2018 articles emphasize summit diplomacy; 2019-2020 articles introduce pandemic and isolation themes; 2021 articles return to militancy.
+2. **Did the regime's English-language rhetoric harden after the February 2019 Hanoi summit failure?** Build a small custom sentiment dictionary (regime-specific positive / negative words), then compare pre-Hanoi (2018 + Jan-Feb 2019) vs. post-Hanoi (Mar 2019 onward) mean sentiment.
+3. **Do articles cluster cleanly by year at the embedding level?** Embed articles with English BERT (or multilingual XLM-R), run k-means with k=4, then check whether `year` is concentrated in particular clusters.
+4. **What is the dominant rhetorical 'frame' in articles about the US and South Korea, and how does it differ?** Filter articles whose `title` mentions "U.S." vs. those whose title mentions "south Korea", then run topic modeling on each subset separately and compare top-words.
 
 ## Provenance
 
