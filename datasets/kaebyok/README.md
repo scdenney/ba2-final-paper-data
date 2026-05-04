@@ -10,6 +10,8 @@ The corpus has a **multi-year publication gap (1927-1933)** that is a direct art
 
 The sample is stratified across years (proportional), so the 1926 censorship gap is preserved (38 articles from 1926, 17 from 1934, 18 from 1935). Article bodies are truncated to 3,500 characters.
 
+**Preprocessing:** *Kaebyok* often mixes Hangul with Hanja (Chinese characters). Use the **Hanja-aware preprocessing script** on the [Data & Scripts page](https://scdenney.github.io/ba2-digital-korea/data/) (`hanja_preprocessing_mac-users.py` / `hanja_preprocessing_windows-users.py`) — it converts Hanja to Hangul readings before tokenization, so Kiwi handles the text cleanly. Note that the KNU sentiment dictionary is contemporary, so historical valence may not match perfectly.
+
 ## Columns
 
 | Column | Type | Description |
