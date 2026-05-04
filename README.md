@@ -38,7 +38,7 @@ Some corpora have method-compatibility constraints. Pick deliberately, not by ac
 
 ## Off-menu corpora
 
-If you want to use a different corpus from [`scdenney/nlp_corpora`](https://github.com/scdenney/nlp_corpora), email Steven before the **11 May workshop** with the corpus name and a one-sentence research question.
+If you want to use a different corpus from [`scdenney/nlp_corpora`](https://github.com/scdenney/nlp_corpora), or another corpus entirely, email Steven before the **11 May workshop** with the corpus name and a one-sentence research question. Off-menu corpora will be considered, but they need approval.
 
 ---
 
