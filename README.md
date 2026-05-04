@@ -1,6 +1,6 @@
 # BA2 Digital Korea — Final Paper Dataset Menu
 
-Curated 11-corpus menu for the BA2 Digital Korea final research paper. Pick one corpus and write a 2,000–5,000-word research paper. See the [Final Paper Workshop page](https://scdenney.github.io/ba2-digital-korea/final-paper/) on the course site for the brief, rubric, and submission details.
+Curated 11-corpus menu for the BA2 Digital Korea final research paper. Pick one corpus and write a 2,500–6,000-word research paper. See the [Final Paper page](https://scdenney.github.io/ba2-digital-korea/final-paper/) on the course site for the brief, rubric, and submission details.
 
 ---
 
@@ -38,7 +38,7 @@ Some corpora have method-compatibility constraints. Pick deliberately, not by ac
 
 ## Off-menu corpora
 
-If you want to use a different corpus from [`scdenney/nlp_corpora`](https://github.com/scdenney/nlp_corpora), email Steven by **Sunday 10 May, end of day** with the corpus name and a one-sentence research question. Off-menu requests after that point are not guaranteed approval.
+If you want to use a different corpus from [`scdenney/nlp_corpora`](https://github.com/scdenney/nlp_corpora), email Steven before the **11 May workshop** with the corpus name and a one-sentence research question.
 
 ---
 
