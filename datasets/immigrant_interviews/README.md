@@ -30,4 +30,10 @@ This is an excellent corpus for a research question framed around **short-form s
 
 ## Provenance
 
-Drawn from the `immigrant_interviews` corpus in [scdenney/nlp_corpora](https://github.com/scdenney/nlp_corpora).
+This is **not** a scraped or curated public corpus. It is the open-text portion of a South Korean public-opinion survey designed and fielded by your instructor and a co-author for a peer-reviewed study.
+
+- **Collected:** February 2019, South Korea (N ≈ 1,008 respondents)
+- **Original analysis:** Denney, S. & Green, C. K. (2020). "Who should be admitted? Conjoint analysis of South Korean attitudes toward immigrants." *Ethnicities*, 21(1), 120–145. <https://doi.org/10.1177/1468796820916609>
+- **Survey design:** The published article (pp. 124–129) describes the conjoint experiment — what immigrant attributes were varied (origin country, language ability, profession, ethnicity, employment plans), how respondents were sampled, and what the experimental task was. The open-text responses in this corpus are the *post-task* explanations respondents wrote to justify their choices. Read the paper before designing your research question.
+
+If you choose this corpus, cite **both** the dataset (this repository) and the source paper. The full survey instrument and the paper PDF are available in the source corpus at [`scdenney/nlp_corpora`](https://github.com/scdenney/nlp_corpora/tree/main/data/immigrant_interviews).

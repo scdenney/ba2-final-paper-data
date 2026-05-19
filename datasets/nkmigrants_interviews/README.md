@@ -29,4 +29,10 @@ This corpus is the **open-text portion** of a South Korean attitudinal survey on
 
 ## Provenance
 
-Drawn from the `nkmigrants_interviews` corpus in [scdenney/nlp_corpora](https://github.com/scdenney/nlp_corpora) (6,027-row original).
+This is **not** a scraped or curated public corpus. It is the open-text portion of a South Korean public-opinion survey designed and fielded by your instructor and a co-author for a peer-reviewed study.
+
+- **Collected:** August–September 2021, South Korea (N ≈ 2,009 respondents × 3 tasks = 6,027 responses; sample here is 6,023 after dropping rows with missing text)
+- **Original analysis:** Denney, S. & Green, C. K. (2024). "Public attitudes towards co-ethnic migrant integration: evidence from South Korea." *Journal of Ethnic and Migration Studies*, 50(8), 1998–2022. <https://doi.org/10.1080/1369183X.2023.2286207>
+- **Survey design:** The published article (pp. 2006–2007) describes the conjoint experiment — what migrant attributes were varied (education, occupation, age, political history, skill match, time in South Korea), and how each respondent completed three judgment tasks (vote / hire / neighbor). The open-text responses in this corpus are the *post-task* explanations respondents wrote to justify each judgment. Read the paper before designing your research question.
+
+If you choose this corpus, cite **both** the dataset (this repository) and the source paper. The full survey instrument and the paper PDF are available in the source corpus at [`scdenney/nlp_corpora`](https://github.com/scdenney/nlp_corpora/tree/main/data/nkmigrants_interviews).

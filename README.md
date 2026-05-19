@@ -14,13 +14,20 @@ Curated 11-corpus menu for the BA2 Digital Korea final research paper. Pick one 
 | 4 | [*Kaebyok* (single-title)](datasets/kaebyok/) | 400 | Single-magazine diachronic analysis 1920–1935; the 1926 censorship gap |
 | 5 | [Korean newspapers (Twitter)](datasets/kr_newspapers_twitter/) | 2,745 | Comparative outlet ideology x engagement, 6 outlets in 2017 |
 | 6 | [Modern Korean poems](datasets/kpoem/) | 615 | Modern Korean poetry by ~30 poets — clustering by poet, topic modeling, sentiment dictionary |
-| 7 | [Immigrant interviews (open-text)](datasets/immigrant_interviews/) | 1,006 | Short-form sentiment / clustering with subgroup metadata (sex, age, political ID, college) |
-| 8 | [NK migrants interviews (open-text)](datasets/nkmigrants_interviews/) | 6,023 | Short-form sentiment / clustering by frame (hire / neighbor / vote) and demographics |
+| 7 | [Immigrant interviews (open-text)](datasets/immigrant_interviews/) † | 1,006 | Short-form sentiment / clustering with subgroup metadata (sex, age, political ID, college) |
+| 8 | [NK migrants interviews (open-text)](datasets/nkmigrants_interviews/) † | 6,023 | Short-form sentiment / clustering by frame (hire / neighbor / vote) and demographics |
 | 9 | [Korean newspaper archive (modern slice)](datasets/korean_newspaper_archive_modern/) | 2,000 | Diachronic / cross-newspaper analysis of the late-colonial / liberation-era press |
 | 10 | [*Rodong Sinmun* (English)](datasets/rodong_sinmun_en/) | 600 | Temporal clustering across diplomatic crises 2018–2021 (English text) |
 | 11 | [NIKH high-school history textbooks](datasets/nikh_textbooks_hs/) | 21 | Authoritarian vs. Democratic curriculum comparison; diachronic textbook analysis 1973–2016 |
 
 Each dataset folder contains a `README.md` (corpus background, columns, suggested research questions), a `data_dictionary.md` (column-by-column reference), and the `*_sample.csv` file ready to load into Orange Data Mining or R.
+
+† **From published academic research.** Two corpora are open-text portions of surveys fielded for peer-reviewed studies by your instructor and a co-author. They are not scraped or curated from existing public archives — they were collected for, and analyzed in, the papers cited below. If you choose one of these, read the source paper to understand how the survey was designed, who was sampled, and what the original analysis claimed. Cite both the dataset and the source paper in your final paper.
+
+- **#7 Immigrant interviews** — survey fielded **February 2019** in South Korea (N ≈ 1,008 respondents). Source: Denney, S. & Green, C. K. (2020). "Who should be admitted? Conjoint analysis of South Korean attitudes toward immigrants." *Ethnicities*, 21(1), 120–145. <https://doi.org/10.1177/1468796820916609>
+- **#8 NK migrants interviews** — survey fielded **August–September 2021** in South Korea (N ≈ 2,009 respondents × 3 tasks). Source: Denney, S. & Green, C. K. (2024). "Public attitudes towards co-ethnic migrant integration: evidence from South Korea." *Journal of Ethnic and Migration Studies*, 50(8), 1998–2022. <https://doi.org/10.1080/1369183X.2023.2286207>
+
+The full survey instruments and PDFs of both papers are available in the [`scdenney/nlp_corpora`](https://github.com/scdenney/nlp_corpora) repository, in `data/immigrant_interviews/` and `data/nkmigrants_interviews/`.
 
 ---
 
