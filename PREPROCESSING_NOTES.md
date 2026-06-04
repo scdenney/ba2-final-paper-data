@@ -1,6 +1,6 @@
 # Preprocessing notes — final paper menu
 
-The default Python preprocessing scripts on the BA2 [Data &amp; Scripts](https://scdenney.github.io/ba2-digital-korea/data/) page (`custom_preprocessing_*.py`, `sentiment_preprocessing_*.py`) work cleanly on most corpora. Four corpora need a different approach. **Find your corpus in the table below — if a "yes" appears in any column, read that section before you start.**
+The default Python preprocessing scripts on the BA2 [Data &amp; Scripts](https://scdenney.github.io/ba2_digital-korea/data/) page (`custom_preprocessing_*.py`, `sentiment_preprocessing_*.py`) work cleanly on most corpora. Four corpora need a different approach. **Find your corpus in the table below — if a "yes" appears in any column, read that section before you start.**
 
 | Corpus | Hanja-heavy (§1) | English-only (§2) | Short text (§3) | Emotion / irregular V&A (§4) |
 |---|:---:|:---:|:---:|:---:|
