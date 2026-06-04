@@ -22,7 +22,7 @@ The audit below was run on a sample of 80 documents per corpus in May 2026.
 
 ---
 
-## §1. Hanja-heavy corpora — use `hanja_preprocessing_*.py`
+## §1. Hanja-heavy corpora — use the `hanja_preprocessing` scripts
 
 Affects: **colonial_magazines · kaebyok · korean_newspaper_archive_modern**
 
@@ -34,7 +34,7 @@ These three colonial-era corpora contain **a quarter to a third Hanja (Chinese-c
 | kaebyok | 27% | 100% |
 | korean_newspaper_archive_modern | 34% | 100% |
 
-**What to do:** download `hanja_preprocessing_mac-users.py` (or `hanja_preprocessing_windows-users.py`) instead of the standard preprocessing script. It auto-installs the `hanja` package, converts each Hanja character to its Korean (Hangul) reading, *then* runs Kiwi tokenization. Drop the script into Orange's Python Script widget the same way you dropped in the standard one.
+**What to do:** download `hanja_preprocessing_mac-users.py` (or `hanja_preprocessing_windows-users.py`) for Orange, or `hanja_preprocessing.R` if you work in RStudio, instead of the standard preprocessing script. It converts each Hanja character to its Korean (Hangul) reading, *then* runs Kiwi tokenization. Articles that are mostly Classical Chinese (Hanmun) are routed to character-level tokenization instead and tagged `text_type = "hanmun"` (vs `"korean"`), so you can analyze the two registers separately. The Orange scripts auto-install the `hanja` package; the R script installs `kiwipiepy` and `hanja` on first run. Drop the Orange script into the Python Script widget the same way you dropped in the standard one.
 
 **Trade-off to mention in your write-up:** the conversion is a substitution, not an interpretation. A reader fluent in 한문 would distinguish meanings that the Hangul reading collapses (e.g. 國 → 국 conflates "nation" with anything else read 국). Good enough for distant-reading; not enough for a deep philological analysis.
 
