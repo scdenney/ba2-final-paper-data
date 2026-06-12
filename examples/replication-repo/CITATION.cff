@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this material, please cite it as below."
+title: "Talking Past the Table: Sentiment and Topic in the English-Language Rodong Sinmun, 2018–2021 (replication materials)"
+type: dataset
+authors:
+  - family-names: "Student"
+    given-names: "Example"
+date-released: "2026-06-03"
+url: "https://github.com/example-student/rodong-sentiment-2018-2021"
+abstract: >
+  Replication materials (data pointer, analysis script, and figures) for a
+  BA2 Digital Korea final paper analysing affective tone and distinctive
+  vocabulary in the English-language Rodong Sinmun, 2018–2021.
+keywords:
+  - North Korea
+  - Rodong Sinmun
+  - sentiment analysis
+  - text as data
+  - Digital Korea
+license: MIT
